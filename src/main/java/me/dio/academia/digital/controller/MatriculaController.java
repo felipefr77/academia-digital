@@ -1,5 +1,7 @@
 package me.dio.academia.digital.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +20,7 @@ public class MatriculaController {
 	private MatriculaServiceImpl service;
 	
 	@PostMapping
-	public Matricula create(@RequestBody MatriculaForm form) {
+	public Matricula create(@Valid @RequestBody MatriculaForm form) {
 		return service.create(form);
 	}
 }
